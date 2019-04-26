@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llEmptyList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/cptIvEmptyList"
+        android:layout_width="@dimen/cpt_empty_list_iv_width"
+        android:layout_height="@dimen/cpt_empty_list_iv_height"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/cptTextEmptyList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_20"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLength="255"
+        android:text="@string/cpt_empty_list_text"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/text_14" />
+
+    <Button
+        android:id="@+id/cptBtnEmptyList"
+        android:layout_width="@dimen/default_button_height"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_12"
+        android:text="@string/cpt_empty_list_button_text"
+        android:visibility="gone" />
+
+</LinearLayout>

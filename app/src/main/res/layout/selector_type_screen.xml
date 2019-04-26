@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.SelectorTypeActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSimpleList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_32"
+        android:layout_marginTop="@dimen/spacing_32"
+        android:layout_marginEnd="@dimen/spacing_32"
+        android:text="Lista simples"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnClickListenerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_32"
+        android:layout_marginTop="@dimen/spacing_32"
+        android:layout_marginEnd="@dimen/spacing_32"
+        android:text="Lista com click listener"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSimpleList" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLongListenerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_32"
+        android:layout_marginTop="@dimen/spacing_32"
+        android:layout_marginEnd="@dimen/spacing_32"
+        android:text="Lista com Long Click"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnClickListenerList" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
