@@ -1,4 +1,4 @@
-package br.com.vitorotero.module.recyclerview.ui.components.emptylist
+package br.com.vitorotero.module.recyclerview.ui.components.recyclerview.emptylist
 
 import android.content.Context
 import android.util.AttributeSet

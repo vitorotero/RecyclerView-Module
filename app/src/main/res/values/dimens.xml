@@ -6,6 +6,7 @@
     <dimen name="divider">1dp</dimen>
 
     <!-- Spacing For Marings and Paddings-->
+    <dimen name="spacing_32">32dp</dimen>
     <dimen name="spacing_26">26dp</dimen>
     <dimen name="spacing_24">24dp</dimen>
     <dimen name="spacing_22">22dp</dimen>

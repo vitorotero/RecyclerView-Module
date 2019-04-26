@@ -1,4 +1,4 @@
-package br.com.vitorotero.module.recyclerview.ui.components.emptylist
+package br.com.vitorotero.module.recyclerview.ui.components.recyclerview.emptylist
 
 import android.view.View
 import androidx.annotation.DrawableRes
@@ -12,9 +12,9 @@ class EmptyObject {
     }
 
     @IntegerRes
-    var message: Int? = null
+    var message: Int = 0
     var icon: Int = 0
-    var buttonText: String? = null
+    var buttonText: String = ""
     var listener: View.OnClickListener? = null
     var layoutListener: View.OnClickListener? = null
 

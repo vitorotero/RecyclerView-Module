@@ -7,7 +7,8 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vitorotero.module.recyclerview.R
-import br.com.vitorotero.module.recyclerview.ui.components.emptylist.EmptyObject
+import br.com.vitorotero.module.recyclerview.ui.components.recyclerview.emptylist.EmptyObject
+import br.com.vitorotero.module.recyclerview.ui.components.recyclerview.emptylist.EmptyViewHolder
 import java.util.*
 
 abstract class BaseAdapter<V> : RecyclerView.Adapter<BaseViewHolder> {
