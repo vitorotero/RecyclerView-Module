@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vitorotero.module.recyclerview.R
 import br.com.vitorotero.module.recyclerview.ui.components.recyclerview.emptylist.EmptyObject
@@ -15,14 +14,17 @@ abstract class BaseAdapter<V> : RecyclerView.Adapter<BaseViewHolder> {
 
     protected var adapterListener: BaseAdapterListener<V>? = null
     protected var clickListener: BaseViewHolderClickListener<V>? = null
-    protected var longClickListener: BaseViewHolderLongClickListener<V>? = null
-    private var model: List<V> = ArrayList()
-    private var emptyObject: EmptyObject = EmptyObject(R.string.empty_list_message, R.mipmap.ic_launcher)
+    protected var model: MutableList<V> = ArrayList()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
+    var emptyObject: EmptyObject = EmptyObject(R.string.empty_list_message, R.mipmap.ic_launcher)
 
     constructor() {
         adapterListener = null
         clickListener = null
-        longClickListener = null
     }
 
     constructor(adapterListener: BaseAdapterListener<V>) {
@@ -33,32 +35,12 @@ abstract class BaseAdapter<V> : RecyclerView.Adapter<BaseViewHolder> {
         this.clickListener = clickListener
     }
 
-    constructor(longClickListener: BaseViewHolderLongClickListener<V>) {
-        this.longClickListener = longClickListener
-    }
-
-    constructor(
-        clickListener: BaseViewHolderClickListener<V>,
-        longClickListener: BaseViewHolderLongClickListener<V>
-    ) {
+    constructor(adapterListener: BaseAdapterListener<V>, clickListener: BaseViewHolderClickListener<V>) {
+        this.adapterListener = adapterListener
         this.clickListener = clickListener
-        this.longClickListener = longClickListener
     }
 
-    protected fun getModel(): List<V> {
-        return model
-    }
-
-    protected fun setModel(model: List<V>) {
-        this.model = model
-        notifyDataSetChanged()
-    }
-
-    fun setEmptyObject(@NonNull emptyObject: EmptyObject) {
-        this.emptyObject = emptyObject
-    }
-
-    abstract fun setList(list: List<V>)
+    abstract fun setList(list: MutableList<V>)
 
     abstract fun holder(view: View): BaseViewHolder
 
@@ -89,15 +71,11 @@ abstract class BaseAdapter<V> : RecyclerView.Adapter<BaseViewHolder> {
     }
 
     interface BaseAdapterListener<V> {
-        fun notifyPositionItemChanged(v: V, position: Int)
+        fun notifyPositionItemChanged(item: V, position: Int)
     }
 
     interface BaseViewHolderClickListener<V> {
-        fun onClickListener(v: V, view: View)
-    }
-
-    interface BaseViewHolderLongClickListener<V> {
-        fun onLongClickListener(v: V, view: View)
+        fun onClickListener(item: V, view: View)
     }
 
     companion object {
