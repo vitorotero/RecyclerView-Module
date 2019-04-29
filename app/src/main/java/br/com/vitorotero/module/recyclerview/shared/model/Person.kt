@@ -8,14 +8,14 @@ import com.google.gson.reflect.TypeToken
 import java.io.Serializable
 
 
-class Simple(
+class Person(
     @SerializedName("id") var id: Int,
     @SerializedName("name") var name: String
 ) : Serializable {
 
     companion object {
-        fun getList(resources: Resources): List<Simple> {
-            val types = object : TypeToken<List<Simple>>() {}.type
+        fun getList(resources: Resources): List<Person> {
+            val types = object : TypeToken<List<Person>>() {}.type
 
             val jsonString = resources.openRawResource(R.raw.examplelist).bufferedReader().use { it.readText() }
 

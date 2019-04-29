@@ -7,6 +7,4 @@ abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
 
     open fun <T> bind(model: T) {}
 
-    open fun <T> bind(model: T, position: Int) {}
-
 }
