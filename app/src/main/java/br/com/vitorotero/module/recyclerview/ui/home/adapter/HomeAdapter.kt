@@ -1,7 +1,6 @@
 package br.com.vitorotero.module.recyclerview.ui.home.adapter
 
 import android.view.View
-import br.com.vitorotero.module.recyclerview.R
 import br.com.vitorotero.module.recyclerview.shared.model.Person
 import br.com.vitorotero.module.recyclerview.ui.components.recyclerview.BaseAdapter
 import br.com.vitorotero.module.recyclerview.ui.components.recyclerview.BaseViewHolder
@@ -10,7 +9,7 @@ class HomeAdapter(clickListener: BaseViewHolderClickListener<Person>) : BaseAdap
     BaseAdapter.BaseAdapterListener<Person> {
 
     override fun getLayoutItem(): Int {
-        return R.layout.home_list_item
+        return br.com.vitorotero.module.recyclerview.R.layout.home_list_item
     }
 
     override fun setList(list: MutableList<Person>) {
